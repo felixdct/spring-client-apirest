@@ -94,7 +94,6 @@ public class ClientRestController {
 					.collect(Collectors.toList());
 			
 			response.put("errors", errors);
-			
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
 		}
 		
