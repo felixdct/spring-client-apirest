@@ -227,13 +227,16 @@ public class ClientRestController {
 				}
 			}
 			clientService.delete(id);
+			
 		} catch(DataAccessException e) {
 			response.put("mensaje", "The client  could not be delete");
 			response.put("error", e.getMessage().concat(": ")
 					.concat(e.getMostSpecificCause().getMessage()));
+			
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		response.put("succesful", "The client was delete successfully");
+		
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
 }
